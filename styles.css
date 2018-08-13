@@ -26,52 +26,82 @@ a:active {
     color: white;
 }
 
-header {
+#canvas {
   position: absolute;
-  top: 20%;
-  left: 7%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+@media only screen and (max-width: 640px)  {
+  #canvas {
+    display: none;
+}
+}
+
+header {
+  position: relative;
+  margin-top: 0vw;
+  left: 7vw;
   font-size: 48px;
   line-height: 58px;
   font-weight: 600;
+  z-index: 2;
 }
 
-@media screen and (max-width: 900px) {
+@media only screen and (max-width: 640px)  {
   header {
-    top: 0%;
-  }
+  margin-top: -10vw;
+  font-size: 28px;
+  line-height: 40px;
 }
+}
+
+.wrapper {
+    top: 50%;
+    position: relative;
+    transform: translateY(-50%);
+  }
 
 .section-main-text {
   padding: 0px 0px 0px;
-  position: absolute;
-  top: 55%;
-  left: 7%;
+  position: relative;
+  margin-top: 2vw;
+  left: 7vw;
 }
 
-@media (max-width: 900px) {
+@media only screen and (max-width: 640px)  {
   .section-main-text {
-    top: 65%;
-  }
+  font-size: 20px;
+  line-height: 35px;
+  margin-top: 0vw;
+}
 }
 
 
 .section-links {
-  padding: 50px 0px 0px;
-  position: absolute;
-  top: 65%;
-  left: 7%;
+  padding: 30px 0px 0px;
+  position: relative;
+  margin-top: 0vw;
+  left: 7vw;
 }
-@media (max-width: 900px) {
+
+@media only screen and (max-width: 640px) {
   .section-links {
-    top: 95%;
-  }
+  padding: 0px 0px 0px;
+  font-size: 20px;
+  line-height: 35px;
+  margin-top: 0vw;
+}
 }
 
+.mobile-break { display: none; }
 
-@media only screen and (min-width: 700px) {
-  h1,h2 {
-      margin-left: 2rem
-  }
+@media only screen and (max-width: 640px) {
+  .mobile-break { display: block; }
+}
 
 .main-wrapper {
 	position: relative;
@@ -79,5 +109,6 @@ header {
 	overflow: hidden;
 	background-size: cover;
 	background-position: center center;
-	z-index: 1;
+	z-index: 3;
+  height: 100vh !important;
 }
